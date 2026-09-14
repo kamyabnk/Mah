@@ -7,7 +7,7 @@
       "runtimeArgs": [
         "/d",
         "/c",
-        "cd /d \"D:\\proj 5\\.worktrees\\foundation-phase\" && npm run dev"
+        "cd /d \"D:\\proj 5\" && npm run dev"
       ],
       "port": 3000
     }
