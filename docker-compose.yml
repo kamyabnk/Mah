@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: mah
+      POSTGRES_PASSWORD: mah_dev_password
+      POSTGRES_DB: mah_candle
+    ports:
+      - "5432:5432"
+    volumes:
+      - mah_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  mah_postgres_data:
