@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { prisma } from "@/lib/prisma";
 import { authorizeAdmin } from "@/lib/auth/admin-authorize";
+import { env } from "@/env";
 
 export const {
   handlers: adminHandlers,
@@ -10,8 +11,9 @@ export const {
   signOut: adminSignOut,
 } = NextAuth({
   basePath: "/api/auth/admin",
+  trustHost: true,
   session: { strategy: "jwt" },
-  secret: process.env.ADMIN_AUTH_SECRET,
+  secret: env.ADMIN_AUTH_SECRET,
   cookies: {
     sessionToken: {
       name: "mah-admin-session",

@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { prisma } from "@/lib/prisma";
 import { authorizeCustomer } from "@/lib/auth/customer-authorize";
+import { env } from "@/env";
 
 export const {
   handlers: customerHandlers,
@@ -10,8 +11,9 @@ export const {
   signOut: customerSignOut,
 } = NextAuth({
   basePath: "/api/auth/customer",
+  trustHost: true,
   session: { strategy: "jwt" },
-  secret: process.env.CUSTOMER_AUTH_SECRET,
+  secret: env.CUSTOMER_AUTH_SECRET,
   cookies: {
     sessionToken: {
       name: "mah-customer-session",
