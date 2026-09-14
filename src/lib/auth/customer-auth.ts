@@ -22,6 +22,24 @@ export const {
         secure: process.env.NODE_ENV === "production",
       },
     },
+    csrfToken: {
+      name: "mah-customer-csrf",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: process.env.NODE_ENV === "production",
+      },
+    },
+    callbackUrl: {
+      name: "mah-customer-callback-url",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: process.env.NODE_ENV === "production",
+      },
+    },
   },
   providers: [
     Credentials({
