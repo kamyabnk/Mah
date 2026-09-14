@@ -9,36 +9,60 @@ A bilingual (English/Farsi) Next.js e-commerce platform for MAH Candle Co. (مه
 
 ## Quick Start
 
-1. **Install dependencies:**
-
-   ```bash
-   npm install
-   ```
-
-2. **Start the database:**
+1. **Start the database:**
 
    ```bash
    docker compose up -d
    ```
 
-3. **Run database migrations:**
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment variables:**
+
+   Copy `.env.example` to `.env` and fill in `DATABASE_URL`, `ADMIN_AUTH_SECRET`, and `CUSTOMER_AUTH_SECRET` (see [Environment Variables](#environment-variables) below).
+
+4. **Run database migrations:**
 
    ```bash
    npm run db:migrate
    ```
 
-4. **Start the development server:**
+   This also generates the Prisma client. The application will not build or run correctly against a fresh `npm install` until this has run at least once (see `npm run db:generate` if you only need to regenerate the client).
+
+5. **Start the development server:**
 
    ```bash
    npm run dev
    ```
 
-   The application will be available at `http://localhost:3000`
+   The application will be available at `http://localhost:3000`, which redirects to the default locale at `/en`. The Persian locale is available at `/fa`.
 
-5. **Run tests:**
+6. **Run tests:**
    ```bash
    npm test
    ```
+
+## Production Docker Image
+
+```bash
+docker build -t mah-candle .
+```
+
+produces a production-ready standalone image (multi-stage build: install → `prisma generate` + `next build` → minimal Alpine runtime). Run it with the same environment variables as above, published on port 3000:
+
+```bash
+docker run -p 3000:3000 \
+  -e DATABASE_URL="postgresql://mah:mah_dev_password@host.docker.internal:5432/mah_candle?schema=public" \
+  -e ADMIN_AUTH_SECRET="..." \
+  -e CUSTOMER_AUTH_SECRET="..." \
+  mah-candle
+```
+
+Use `host.docker.internal` (or a container network) to reach the `docker compose`-managed Postgres instance from inside the app container.
 
 ## Available Scripts
 
@@ -62,10 +86,14 @@ Create a `.env` file in the root directory. See `.env.example` for required vari
 
 ## Tech Stack
 
-- **Framework:** Next.js 16
+- **Framework:** Next.js 15 (App Router)
 - **Language:** TypeScript
 - **Database:** PostgreSQL (via Prisma)
+- **Auth:** NextAuth (separate admin and customer realms)
+- **i18n:** next-intl (English `/en` and Persian `/fa`, locale-aware routing via middleware)
+- **Styling:** Tailwind CSS v4 design tokens + custom UI primitives
 - **Validation:** Zod
 - **Testing:** Vitest
 - **Linting:** ESLint
 - **Formatting:** Prettier
+- **Deployment:** Docker (standalone Next.js output)
