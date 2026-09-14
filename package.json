@@ -39,7 +39,7 @@
     "happy-dom": "^20.14.5",
     "prettier": "^3.9.6",
     "prisma": "^6.19.3",
-    "typescript": "^7.0.2",
+    "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^5.0.0"
   }
