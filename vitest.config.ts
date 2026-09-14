@@ -6,5 +6,10 @@ export default defineConfig({
   test: {
     environment: "happy-dom",
     include: ["tests/**/*.test.{ts,tsx}"],
+    server: {
+      deps: {
+        inline: ["next", "next-auth"],
+      },
+    },
   },
 });
