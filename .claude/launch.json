@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": [
+        "/d",
+        "/c",
+        "cd /d \"D:\\proj 5\\.worktrees\\foundation-phase\" && npm run dev"
+      ],
+      "port": 3000
+    }
+  ]
+}
