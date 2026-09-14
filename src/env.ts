@@ -9,4 +9,17 @@ export const envSchema = z.object({
 
 export type Env = z.infer<typeof envSchema>;
 
-export const env: Env = envSchema.parse(process.env);
+let cached: Env | undefined;
+
+function resolveEnv(): Env {
+  if (!cached) {
+    cached = envSchema.parse(process.env);
+  }
+  return cached;
+}
+
+export const env: Env = new Proxy({} as Env, {
+  get(_target, prop: string) {
+    return resolveEnv()[prop as keyof Env];
+  },
+});
