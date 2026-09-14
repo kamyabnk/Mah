@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #faf6f0;
+  --color-ivory-dark: #f1e9dd;
+  --color-espresso: #2b241d;
+  --color-espresso-light: #5a5044;
+  --color-amber: #b5652f;
+  --color-terracotta: #c17a56;
+  --color-sage: #8a9a80;
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-fraunces);
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-espresso);
+}
