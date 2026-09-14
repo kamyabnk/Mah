@@ -26,4 +26,14 @@ describe("ManualPaymentProvider", () => {
       /no callback flow/i
     );
   });
+
+  it("never auto-succeeds a refund — refund is unsupported", async () => {
+    await expect(
+      provider.refund({
+        orderId: "order_1",
+        paymentId: "pay_1",
+        amount: 250000,
+      })
+    ).rejects.toThrow(/no automated refund flow/i);
+  });
 });

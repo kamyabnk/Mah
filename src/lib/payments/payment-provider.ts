@@ -22,8 +22,21 @@ export interface VerifyCallbackResult {
   rawPayload: Record<string, unknown>;
 }
 
+export interface RefundInput {
+  orderId: string;
+  paymentId: string;
+  amount: number;
+  reason?: string;
+}
+
+export interface RefundResult {
+  status: "FAILED";
+  reason: string;
+}
+
 export interface PaymentProvider {
   readonly key: string;
   createPayment(input: CreatePaymentInput): Promise<CreatePaymentResult>;
   verifyCallback(input: VerifyCallbackInput): Promise<VerifyCallbackResult>;
+  refund(input: RefundInput): Promise<RefundResult>;
 }
