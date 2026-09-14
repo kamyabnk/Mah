@@ -10,6 +10,13 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npx prisma generate
+# Build-time-only placeholders so src/env.ts validation (which now runs eagerly
+# when the NextAuth configs are imported while Next.js collects route page data)
+# doesn't fail the build. These never reach the runner stage/final image; real
+# secrets must be supplied at container runtime.
+ENV DATABASE_URL="postgresql://placeholder:placeholder@localhost:5432/placeholder" \
+    ADMIN_AUTH_SECRET="build-time-placeholder-secret-do-not-use-in-prod-1" \
+    CUSTOMER_AUTH_SECRET="build-time-placeholder-secret-do-not-use-in-prod-2"
 RUN npm run build
 
 FROM base AS runner

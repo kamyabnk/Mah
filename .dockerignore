@@ -5,3 +5,6 @@ docs
 *.md
 .env
 .env.local
+.worktrees/
+tests/
+.superpowers/
