@@ -252,6 +252,8 @@ model Product {
   isFeatured           Boolean   @default(false)
   isNewArrival         Boolean   @default(false)
   isBestSeller         Boolean   @default(false)
+  averageRating        Decimal?  @db.Decimal(2, 1)
+  reviewCount          Int       @default(0)
   publishedAt          DateTime?
   updatedByAdminId     String?
   updatedByAdmin       AdminUser? @relation("ProductUpdatedBy", fields: [updatedByAdminId], references: [id])
@@ -273,6 +275,10 @@ model Product {
   @@index([status, isFeatured])
   @@index([status, isBestSeller])
   @@index([status, isNewArrival])
+  @@index([status, price])
+  @@index([status, publishedAt])
+  @@index([status, averageRating])
+  @@index([fragranceFamilyId])
 }
 
 model ProductVariant {
@@ -702,4 +708,12 @@ model Notification {
   createdAt   DateTime   @default(now())
 
   @@index([adminUserId, isRead])
+}
+
+// ---------- Newsletter ----------
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
 }

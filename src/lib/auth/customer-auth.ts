@@ -52,4 +52,18 @@ export const {
         ),
     }),
   ],
+  callbacks: {
+    jwt: async ({ token, user }) => {
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    },
+    session: async ({ session, token }) => {
+      if (session.user && typeof token.id === "string") {
+        (session.user as { id?: string }).id = token.id;
+      }
+      return session;
+    },
+  },
 });
