@@ -14,3 +14,19 @@ export function requirePermission(permissions: string[] | undefined, required: s
     throw new AdminPermissionError(required);
   }
 }
+
+export interface AdminSessionLike {
+  user?: { id: string; permissions?: string[] } | null;
+}
+
+/**
+ * Server-side gate for every admin Server Action/route handler. Never trust client-side role
+ * state — this must be called at the top of each action, reading the real session each time.
+ */
+export function requireAdminPermission(session: AdminSessionLike | null, required: string): string {
+  if (!session?.user?.id) {
+    throw new AdminPermissionError(required);
+  }
+  requirePermission(session.user.permissions, required);
+  return session.user.id;
+}

@@ -61,7 +61,7 @@ export const {
     },
     session: async ({ session, token }) => {
       if (session.user && typeof token.id === "string") {
-        (session.user as { id?: string }).id = token.id;
+        session.user.id = token.id;
       }
       return session;
     },

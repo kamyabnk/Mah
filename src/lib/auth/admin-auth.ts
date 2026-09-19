@@ -68,6 +68,7 @@ export const {
   callbacks: {
     jwt: async ({ token, user }) => {
       if (user) {
+        token.id = user.id;
         token.role = (user as { role?: string }).role;
         token.permissions = (user as { permissions?: string[] }).permissions;
       }
@@ -75,11 +76,9 @@ export const {
     },
     session: async ({ session, token }) => {
       if (session.user) {
-        (session.user as typeof session.user & { role?: string; permissions?: string[] }).role =
-          token.role as string | undefined;
-        (
-          session.user as typeof session.user & { role?: string; permissions?: string[] }
-        ).permissions = token.permissions as string[] | undefined;
+        session.user.id = token.id as string;
+        session.user.role = token.role as string | undefined;
+        session.user.permissions = token.permissions as string[] | undefined;
       }
       return session;
     },
