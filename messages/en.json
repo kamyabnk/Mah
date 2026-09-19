@@ -7,6 +7,123 @@
     "brandName": "MAH Candle Co.",
     "tagline": "A Glow in the Mist",
     "comingSoon": "The full storefront is on its way.",
-    "viewDesignSystem": "View design system"
+    "viewDesignSystem": "View design system",
+    "addToCart": "Add to Cart",
+    "addedToCart": "Added",
+    "outOfStock": "Out of stock",
+    "buyNow": "Buy Now",
+    "quickView": "Quick View",
+    "viewDetails": "View details",
+    "inStock": "In stock",
+    "lowStock": "Low stock",
+    "currency": "Toman",
+    "close": "Close",
+    "save": "Save"
+  },
+  "nav": {
+    "home": "Home",
+    "shopAll": "All Candles",
+    "search": "Search",
+    "searchPlaceholder": "Search candles, fragrances, SKU...",
+    "account": "Account",
+    "wishlist": "Wishlist",
+    "cart": "Cart",
+    "logout": "Log out",
+    "myAccount": "My Account",
+    "myOrders": "My Orders"
+  },
+  "footer": {
+    "about": "MAH Candle Co. hand-pours every candle with clean-burning wax and real fragrance oils — a glow in the mist for every room.",
+    "shop": "Shop",
+    "help": "Help",
+    "contact": "Contact",
+    "copyright": "© {year} MAH Candle Co. All rights reserved."
+  },
+  "account": {
+    "registerTitle": "Create an account",
+    "loginTitle": "Log in",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phoneOptional": "Phone (optional)",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "registerCta": "Create account",
+    "loginCta": "Log in",
+    "submitting": "Please wait...",
+    "haveAccount": "Already have an account?",
+    "noAccount": "Don't have an account?"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty.",
+    "remove": "Remove",
+    "subtotal": "Subtotal",
+    "currency": "Toman",
+    "continueShopping": "Continue shopping"
+  },
+  "wishlist": {
+    "title": "Your Wishlist",
+    "empty": "Your wishlist is empty.",
+    "moveToCart": "Move to cart",
+    "remove": "Remove",
+    "loginRequired": "Log in to save items to your wishlist."
+  },
+  "product": {
+    "sku": "SKU",
+    "quantity": "Quantity",
+    "description": "Description",
+    "fragranceNotes": "Fragrance Notes",
+    "details": "Candle Details",
+    "ingredients": "Ingredients",
+    "careInstructions": "Care Instructions",
+    "safetyInstructions": "Safety Instructions",
+    "reviews": "Reviews",
+    "noReviews": "No reviews yet.",
+    "relatedProducts": "You May Also Like",
+    "waxType": "Wax Type",
+    "wickType": "Wick Type",
+    "burnTime": "Burn Time",
+    "weight": "Weight",
+    "color": "Color",
+    "size": "Size"
+  },
+  "filters": {
+    "title": "Filters",
+    "category": "Category",
+    "price": "Price",
+    "fragrance": "Fragrance",
+    "color": "Color",
+    "size": "Size",
+    "availability": "Availability",
+    "inStockOnly": "In stock only",
+    "bestSeller": "Best Seller",
+    "newArrival": "New Arrival",
+    "onSale": "On Sale",
+    "rating": "Rating",
+    "clear": "Clear filters",
+    "apply": "Apply",
+    "noResults": "No candles match these filters."
+  },
+  "sort": {
+    "label": "Sort by",
+    "featured": "Featured",
+    "newest": "Newest",
+    "bestselling": "Best Selling",
+    "priceAsc": "Price: Low to High",
+    "priceDesc": "Price: High to Low",
+    "rating": "Highest Rated"
+  },
+  "search": {
+    "title": "Search Results",
+    "resultsFor": "Results for \"{query}\"",
+    "noResults": "No candles found for \"{query}\".",
+    "placeholder": "Search candles..."
+  },
+  "newsletter": {
+    "placeholder": "Your email address",
+    "cta": "Subscribe",
+    "success": "Thanks for subscribing!",
+    "error": "Something went wrong. Please try again."
   }
 }

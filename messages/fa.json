@@ -7,6 +7,123 @@
     "brandName": "مه کندل",
     "tagline": "نوری در دل مه",
     "comingSoon": "فروشگاه کامل به‌زودی راه‌اندازی می‌شود.",
-    "viewDesignSystem": "مشاهده سیستم طراحی"
+    "viewDesignSystem": "مشاهده سیستم طراحی",
+    "addToCart": "افزودن به سبد خرید",
+    "addedToCart": "افزوده شد",
+    "outOfStock": "ناموجود",
+    "buyNow": "خرید سریع",
+    "quickView": "مشاهده سریع",
+    "viewDetails": "مشاهده جزئیات",
+    "inStock": "موجود",
+    "lowStock": "موجودی محدود",
+    "currency": "تومان",
+    "close": "بستن",
+    "save": "ذخیره"
+  },
+  "nav": {
+    "home": "خانه",
+    "shopAll": "همه شمع‌ها",
+    "search": "جستجو",
+    "searchPlaceholder": "جستجوی شمع، رایحه، کد کالا...",
+    "account": "حساب کاربری",
+    "wishlist": "علاقه‌مندی‌ها",
+    "cart": "سبد خرید",
+    "logout": "خروج",
+    "myAccount": "حساب من",
+    "myOrders": "سفارش‌های من"
+  },
+  "footer": {
+    "about": "مه کندل هر شمع را با موم پاک‌سوز و روغن‌های رایحه‌ای اصیل، با دست می‌سازد؛ نوری در دل مه برای هر فضا.",
+    "shop": "فروشگاه",
+    "help": "راهنما",
+    "contact": "تماس با ما",
+    "copyright": "© {year} مه کندل. تمامی حقوق محفوظ است."
+  },
+  "account": {
+    "registerTitle": "ساخت حساب کاربری",
+    "loginTitle": "ورود",
+    "firstName": "نام",
+    "lastName": "نام خانوادگی",
+    "email": "ایمیل",
+    "phoneOptional": "تلفن (اختیاری)",
+    "password": "رمز عبور",
+    "confirmPassword": "تکرار رمز عبور",
+    "registerCta": "ساخت حساب",
+    "loginCta": "ورود",
+    "submitting": "لطفاً صبر کنید...",
+    "haveAccount": "قبلاً حساب کاربری دارید؟",
+    "noAccount": "حساب کاربری ندارید؟"
+  },
+  "cart": {
+    "title": "سبد خرید شما",
+    "empty": "سبد خرید شما خالی است.",
+    "remove": "حذف",
+    "subtotal": "جمع جزء",
+    "currency": "تومان",
+    "continueShopping": "ادامه خرید"
+  },
+  "wishlist": {
+    "title": "علاقه‌مندی‌های شما",
+    "empty": "لیست علاقه‌مندی‌های شما خالی است.",
+    "moveToCart": "افزودن به سبد خرید",
+    "remove": "حذف",
+    "loginRequired": "برای ذخیره در علاقه‌مندی‌ها وارد حساب خود شوید."
+  },
+  "product": {
+    "sku": "کد کالا",
+    "quantity": "تعداد",
+    "description": "توضیحات",
+    "fragranceNotes": "نت‌های رایحه",
+    "details": "مشخصات شمع",
+    "ingredients": "ترکیبات",
+    "careInstructions": "راهنمای نگهداری",
+    "safetyInstructions": "نکات ایمنی",
+    "reviews": "نظرات",
+    "noReviews": "هنوز نظری ثبت نشده است.",
+    "relatedProducts": "ممکن است این محصولات را هم دوست داشته باشید",
+    "waxType": "نوع موم",
+    "wickType": "نوع فتیله",
+    "burnTime": "زمان سوختن",
+    "weight": "وزن",
+    "color": "رنگ",
+    "size": "اندازه"
+  },
+  "filters": {
+    "title": "فیلترها",
+    "category": "دسته‌بندی",
+    "price": "قیمت",
+    "fragrance": "رایحه",
+    "color": "رنگ",
+    "size": "اندازه",
+    "availability": "موجودی",
+    "inStockOnly": "فقط کالاهای موجود",
+    "bestSeller": "پرفروش",
+    "newArrival": "جدید",
+    "onSale": "حراج",
+    "rating": "امتیاز",
+    "clear": "پاک کردن فیلترها",
+    "apply": "اعمال",
+    "noResults": "شمعی با این فیلترها یافت نشد."
+  },
+  "sort": {
+    "label": "مرتب‌سازی",
+    "featured": "پیشنهادی",
+    "newest": "جدیدترین",
+    "bestselling": "پرفروش‌ترین",
+    "priceAsc": "قیمت: کم به زیاد",
+    "priceDesc": "قیمت: زیاد به کم",
+    "rating": "بالاترین امتیاز"
+  },
+  "search": {
+    "title": "نتایج جستجو",
+    "resultsFor": "نتایج برای «{query}»",
+    "noResults": "شمعی برای «{query}» یافت نشد.",
+    "placeholder": "جستجوی شمع..."
+  },
+  "newsletter": {
+    "placeholder": "آدرس ایمیل شما",
+    "cta": "عضویت",
+    "success": "با تشکر از عضویت شما!",
+    "error": "مشکلی پیش آمد. دوباره تلاش کنید."
   }
 }

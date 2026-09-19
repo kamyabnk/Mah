@@ -17,7 +17,7 @@ async function currentCustomerId(): Promise<string | null> {
 }
 
 async function getOrCreateCartId(deps: ActionDeps = {}): Promise<string> {
-  const customerId = await currentCustomerId();
+  const customerId = deps.guestToken ? null : await currentCustomerId();
   if (customerId) {
     const existing = await prisma.cart.findUnique({ where: { customerId }, select: { id: true } });
     if (existing) return existing.id;
@@ -44,6 +44,12 @@ async function getOrCreateCartId(deps: ActionDeps = {}): Promise<string> {
     maxAge: 60 * 60 * 24 * 30,
   });
   return created.id;
+}
+
+function revalidateCart(deps: ActionDeps): void {
+  if (deps.guestToken) return; // test seam: no request/render context to revalidate outside Next.js
+  revalidatePath("/[locale]/cart", "page");
+  revalidatePath("/[locale]", "layout");
 }
 
 async function getAvailableStockAndPrice(
@@ -93,8 +99,7 @@ export async function addToCart(
     });
   }
 
-  revalidatePath("/[locale]/cart", "page");
-  revalidatePath("/[locale]", "layout");
+  revalidateCart(deps);
   return { ok: true, cappedAt: cappedQuantity < desiredQuantity ? cappedQuantity : null };
 }
 
@@ -113,8 +118,7 @@ export async function updateCartItemQuantity(
     await prisma.cartItem.update({ where: { id: item.id }, data: { quantity: Math.min(input.quantity, stock) } });
   }
 
-  revalidatePath("/[locale]/cart", "page");
-  revalidatePath("/[locale]", "layout");
+  revalidateCart(deps);
   return { ok: true };
 }
 
@@ -127,7 +131,6 @@ export async function removeFromCart(
   if (!item) return { ok: false, error: "NOT_FOUND" };
 
   await prisma.cartItem.delete({ where: { id: item.id } });
-  revalidatePath("/[locale]/cart", "page");
-  revalidatePath("/[locale]", "layout");
+  revalidateCart(deps);
   return { ok: true };
 }

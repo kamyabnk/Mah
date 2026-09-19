@@ -29,7 +29,7 @@ async function currentCustomerId(): Promise<string | null> {
 }
 
 export async function resolveCartId(guestToken?: string): Promise<string | null> {
-  const customerId = await currentCustomerId();
+  const customerId = guestToken ? null : await currentCustomerId();
   if (customerId) {
     const cart = await prisma.cart.findUnique({ where: { customerId }, select: { id: true } });
     return cart?.id ?? null;
