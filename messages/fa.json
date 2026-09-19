@@ -60,7 +60,8 @@
     "remove": "حذف",
     "subtotal": "جمع جزء",
     "currency": "تومان",
-    "continueShopping": "ادامه خرید"
+    "continueShopping": "ادامه خرید",
+    "checkout": "ادامه فرآیند خرید"
   },
   "wishlist": {
     "title": "علاقه‌مندی‌های شما",
@@ -119,6 +120,62 @@
     "resultsFor": "نتایج برای «{query}»",
     "noResults": "شمعی برای «{query}» یافت نشد.",
     "placeholder": "جستجوی شمع..."
+  },
+  "checkout": {
+    "title": "تسویه حساب",
+    "orderSummary": "خلاصه سفارش",
+    "subtotal": "جمع جزء",
+    "firstName": "نام",
+    "lastName": "نام خانوادگی",
+    "phone": "تلفن",
+    "emailOptional": "ایمیل (اختیاری)",
+    "address": "آدرس",
+    "city": "شهر",
+    "province": "استان",
+    "postalCode": "کد پستی",
+    "country": "کشور",
+    "couponCode": "کد تخفیف (اختیاری)",
+    "notes": "توضیحات سفارش (اختیاری)",
+    "placeOrder": "ثبت سفارش",
+    "submitting": "در حال ثبت سفارش...",
+    "errors": {
+      "EMPTY_CART": "سبد خرید شما خالی است.",
+      "INVALID_FORM": "لطفاً فرم را بررسی و دوباره تلاش کنید.",
+      "COUPON_NOT_FOUND": "این کد تخفیف وجود ندارد.",
+      "COUPON_INACTIVE": "این کد تخفیف فعال نیست.",
+      "COUPON_NOT_STARTED": "این کد تخفیف هنوز معتبر نشده است.",
+      "COUPON_EXPIRED": "این کد تخفیف منقضی شده است.",
+      "COUPON_MIN_ORDER_NOT_MET": "مبلغ سفارش شما به حداقل لازم برای این کد تخفیف نرسیده است.",
+      "COUPON_USAGE_LIMIT_REACHED": "سقف استفاده از این کد تخفیف پر شده است.",
+      "COUPON_CUSTOMER_LIMIT_REACHED": "شما قبلاً از این کد تخفیف استفاده کرده‌اید.",
+      "COUPON_NOT_APPLICABLE": "این کد تخفیف به سبد خرید شما تعلق نمی‌گیرد.",
+      "INSUFFICIENT_STOCK": "یکی از کالاهای شما به تعداد درخواستی موجود نیست.",
+      "GENERIC": "مشکلی پیش آمد. دوباره تلاش کنید."
+    }
+  },
+  "orderStatus": {
+    "PENDING": "در انتظار",
+    "PAYMENT_PENDING": "در انتظار پرداخت",
+    "PAID": "پرداخت‌شده",
+    "PROCESSING": "در حال پردازش",
+    "SHIPPED": "ارسال‌شده",
+    "DELIVERED": "تحویل داده‌شده",
+    "CANCELLED": "لغوشده",
+    "REFUNDED": "بازگردانده‌شده",
+    "RETURNED": "مرجوع‌شده"
+  },
+  "orders": {
+    "title": "سفارش‌های من",
+    "empty": "هنوز سفارشی ثبت نکرده‌اید.",
+    "orderNumber": "سفارش",
+    "status": "وضعیت",
+    "placedOn": "تاریخ ثبت",
+    "total": "مبلغ کل",
+    "confirmationTitle": "از خرید شما سپاسگزاریم!",
+    "confirmationBody": "سفارش شما ثبت شد و در انتظار تأیید پرداخت است.",
+    "viewOrders": "مشاهده سفارش‌های من",
+    "items": "اقلام",
+    "shippingAddress": "آدرس ارسال"
   },
   "newsletter": {
     "placeholder": "آدرس ایمیل شما",

@@ -60,7 +60,8 @@
     "remove": "Remove",
     "subtotal": "Subtotal",
     "currency": "Toman",
-    "continueShopping": "Continue shopping"
+    "continueShopping": "Continue shopping",
+    "checkout": "Proceed to Checkout"
   },
   "wishlist": {
     "title": "Your Wishlist",
@@ -119,6 +120,62 @@
     "resultsFor": "Results for \"{query}\"",
     "noResults": "No candles found for \"{query}\".",
     "placeholder": "Search candles..."
+  },
+  "checkout": {
+    "title": "Checkout",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phone": "Phone",
+    "emailOptional": "Email (optional)",
+    "address": "Address",
+    "city": "City",
+    "province": "Province",
+    "postalCode": "Postal code",
+    "country": "Country",
+    "couponCode": "Coupon code (optional)",
+    "notes": "Order notes (optional)",
+    "placeOrder": "Place Order",
+    "submitting": "Placing order...",
+    "errors": {
+      "EMPTY_CART": "Your cart is empty.",
+      "INVALID_FORM": "Please check the form and try again.",
+      "COUPON_NOT_FOUND": "That coupon code doesn't exist.",
+      "COUPON_INACTIVE": "That coupon is not active.",
+      "COUPON_NOT_STARTED": "That coupon isn't valid yet.",
+      "COUPON_EXPIRED": "That coupon has expired.",
+      "COUPON_MIN_ORDER_NOT_MET": "Your order doesn't meet the coupon's minimum amount.",
+      "COUPON_USAGE_LIMIT_REACHED": "That coupon has reached its usage limit.",
+      "COUPON_CUSTOMER_LIMIT_REACHED": "You've already used that coupon.",
+      "COUPON_NOT_APPLICABLE": "That coupon doesn't apply to your cart.",
+      "INSUFFICIENT_STOCK": "One of your items is no longer available in the requested quantity.",
+      "GENERIC": "Something went wrong. Please try again."
+    }
+  },
+  "orderStatus": {
+    "PENDING": "Pending",
+    "PAYMENT_PENDING": "Payment Pending",
+    "PAID": "Paid",
+    "PROCESSING": "Processing",
+    "SHIPPED": "Shipped",
+    "DELIVERED": "Delivered",
+    "CANCELLED": "Cancelled",
+    "REFUNDED": "Refunded",
+    "RETURNED": "Returned"
+  },
+  "orders": {
+    "title": "My Orders",
+    "empty": "You haven't placed any orders yet.",
+    "orderNumber": "Order",
+    "status": "Status",
+    "placedOn": "Placed on",
+    "total": "Total",
+    "confirmationTitle": "Thank you for your order!",
+    "confirmationBody": "Your order has been received and is pending payment confirmation.",
+    "viewOrders": "View my orders",
+    "items": "Items",
+    "shippingAddress": "Shipping Address"
   },
   "newsletter": {
     "placeholder": "Your email address",

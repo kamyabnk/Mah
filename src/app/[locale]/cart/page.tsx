@@ -33,6 +33,12 @@ export default async function CartPage({ params }: { params: Promise<{ locale: s
               {cart.subtotal.toLocaleString()} {t("currency")}
             </Text>
           </div>
+          <Link
+            href="/checkout"
+            className="inline-flex h-11 items-center justify-center rounded-sm bg-amber px-6 text-base font-medium text-ivory transition-colors hover:bg-amber/90"
+          >
+            {t("checkout")}
+          </Link>
         </div>
       )}
     </Container>

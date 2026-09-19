@@ -45,11 +45,16 @@ export async function SiteHeader({ locale }: { locale: "en" | "fa" }) {
             )}
           </Link>
           {isLoggedIn ? (
-            <form action={logoutCustomer}>
-              <button type="submit" className="text-sm text-espresso">
-                {t("logout")}
-              </button>
-            </form>
+            <>
+              <Link href="/account/orders" aria-label={t("myOrders")} className="text-sm text-espresso">
+                {t("myOrders")}
+              </Link>
+              <form action={logoutCustomer}>
+                <button type="submit" className="text-sm text-espresso">
+                  {t("logout")}
+                </button>
+              </form>
+            </>
           ) : (
             <Link href="/account/login" aria-label={t("account")} className="text-espresso">
               {t("account")}
