@@ -5,6 +5,8 @@ import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -34,6 +36,7 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages();
+  const activeLocale = locale === "fa" ? "fa" : "en";
   const isRtl = locale === "fa";
   const fontClassNames = isRtl ? vazirmatn.variable : `${inter.variable} ${fraunces.variable}`;
   const fontVars = isRtl
@@ -43,7 +46,13 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={isRtl ? "rtl" : "ltr"}>
       <body className={`${fontClassNames} antialiased`} style={fontVars as CSSProperties}>
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
+          <div className="flex min-h-screen flex-col">
+            <SiteHeader locale={activeLocale} />
+            <main className="flex-1">{children}</main>
+            <SiteFooter locale={activeLocale} />
+          </div>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
