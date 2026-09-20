@@ -6,6 +6,11 @@ export interface AdminNavItem {
   href: string;
   /** `null` means every signed-in admin may see it. */
   permission: string | null;
+  /**
+   * Active only on an exact path match. Needed for `/admin`, which prefixes
+   * every other admin route and would otherwise light up everywhere.
+   */
+  exact?: boolean;
 }
 
 export interface AdminNavGroup {
@@ -17,7 +22,7 @@ export interface AdminNavGroup {
 export const ADMIN_NAV: AdminNavGroup[] = [
   {
     key: null,
-    items: [{ key: "dashboard", href: "/admin", permission: null }],
+    items: [{ key: "dashboard", href: "/admin", permission: null, exact: true }],
   },
   {
     key: "catalogGroup",
@@ -64,7 +69,9 @@ export function activeNavHref(pathname: string, groups: AdminNavGroup[]): string
   let best: string | null = null;
   for (const group of groups) {
     for (const item of group.items) {
-      const matches = pathname === item.href || pathname.startsWith(`${item.href}/`);
+      const matches = item.exact
+        ? pathname === item.href
+        : pathname === item.href || pathname.startsWith(`${item.href}/`);
       if (matches && (best === null || item.href.length > best.length)) {
         best = item.href;
       }
