@@ -15,8 +15,8 @@ export async function SiteHeader({ locale }: { locale: "en" | "fa" }) {
 
   return (
     <header className="border-b border-espresso/10 bg-ivory">
-      <Container className="flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="font-display text-xl font-medium text-espresso">
+      <Container className="flex h-16 items-center justify-between gap-2 sm:gap-4">
+        <Link href="/" className="shrink-0 whitespace-nowrap font-display text-lg font-medium text-espresso sm:text-xl">
           {tCommon("brandName")}
         </Link>
 
@@ -29,7 +29,7 @@ export async function SiteHeader({ locale }: { locale: "en" | "fa" }) {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <Link href="/search" aria-label={t("search")} className="text-espresso">
             ⌕
           </Link>
@@ -44,24 +44,35 @@ export async function SiteHeader({ locale }: { locale: "en" | "fa" }) {
               </span>
             )}
           </Link>
-          {isLoggedIn ? (
-            <>
-              <Link href="/account/orders" aria-label={t("myOrders")} className="text-sm text-espresso">
-                {t("myOrders")}
+
+          <div className="hidden items-center gap-4 sm:flex">
+            {isLoggedIn ? (
+              <>
+                <Link href="/account/orders" aria-label={t("myOrders")} className="text-sm text-espresso">
+                  {t("myOrders")}
+                </Link>
+                <form action={logoutCustomer}>
+                  <button type="submit" className="text-sm text-espresso">
+                    {t("logout")}
+                  </button>
+                </form>
+              </>
+            ) : (
+              <Link href="/account/login" aria-label={t("account")} className="text-espresso">
+                {t("account")}
               </Link>
-              <form action={logoutCustomer}>
-                <button type="submit" className="text-sm text-espresso">
-                  {t("logout")}
-                </button>
-              </form>
-            </>
-          ) : (
-            <Link href="/account/login" aria-label={t("account")} className="text-espresso">
-              {t("account")}
-            </Link>
-          )}
+            )}
+          </div>
+
           <LanguageSwitcher />
-          <HeaderNavToggle homeLabel={t("home")} shopLabel={t("shopAll")} />
+          <HeaderNavToggle
+            homeLabel={t("home")}
+            shopLabel={t("shopAll")}
+            isLoggedIn={isLoggedIn}
+            accountLabel={t("account")}
+            myOrdersLabel={t("myOrders")}
+            logoutLabel={t("logout")}
+          />
         </div>
       </Container>
     </header>
