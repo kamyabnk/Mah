@@ -1,7 +1,7 @@
 {
-  "name": "foundation-phase",
+  "name": "mah-candle-co",
   "version": "1.0.0",
-  "description": "",
+  "description": "MAH Candle Co. / مه کندل — bilingual candle e-commerce platform",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,7 +13,11 @@
     "test:watch": "vitest",
     "db:migrate": "prisma migrate dev",
     "db:generate": "prisma generate",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "db:seed": "tsx prisma/seed.ts"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
@@ -40,6 +44,7 @@
     "happy-dom": "^20.14.5",
     "prettier": "^3.9.6",
     "prisma": "^6.19.3",
+    "tsx": "^4.23.13",
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^5.0.0"
