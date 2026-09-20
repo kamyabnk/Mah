@@ -29,6 +29,20 @@ export async function guardAdminAction(permission: string): Promise<string> {
 }
 
 /**
+ * Form-action flavour of `guardAdminAction`: returns the acting admin's id, or
+ * `null` when the permission is missing so the caller can render the refusal in
+ * the form instead of throwing a 500 at the user.
+ */
+export async function tryGuardAdminAction(permission: string): Promise<string | null> {
+  try {
+    return await guardAdminAction(permission);
+  } catch (error) {
+    if (error instanceof AdminPermissionError) return null;
+    throw error;
+  }
+}
+
+/**
  * Runs `fn` behind `guardAdminAction` and normalises failures into a result
  * object. `fn` must never call `redirect()` — Next.js implements redirects by
  * throwing, and that control-flow signal must not be swallowed here. Redirect

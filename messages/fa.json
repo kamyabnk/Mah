@@ -619,6 +619,13 @@
       "RESTOCK": "تأمین مجدد",
       "CANCELLATION": "لغو سفارش",
       "RETURN": "مرجوعی"
+    },
+    "fieldErrors": {
+      "required": "این فیلد الزامی است",
+      "invalidSlug": "فقط حروف، عدد و خط تیره مجاز است.",
+      "invalidNumber": "یک عدد معتبر وارد کنید.",
+      "mustBePositive": "باید صفر یا بزرگ‌تر باشد.",
+      "invalidDate": "تاریخ معتبر وارد کنید."
     }
   }
 }

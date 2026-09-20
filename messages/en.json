@@ -619,6 +619,13 @@
       "RESTOCK": "Restock",
       "CANCELLATION": "Cancellation",
       "RETURN": "Return"
+    },
+    "fieldErrors": {
+      "required": "Required",
+      "invalidSlug": "Use letters, numbers and hyphens only.",
+      "invalidNumber": "Enter a valid number.",
+      "mustBePositive": "Must be zero or greater.",
+      "invalidDate": "Enter a valid date."
     }
   }
 }
