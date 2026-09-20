@@ -30,6 +30,7 @@ export default async function AdminDashboardPage({
   const t = await getTranslations({ locale: rawLocale, namespace: "admin.dashboard" });
   const tStatus = await getTranslations({ locale: rawLocale, namespace: "orderStatus" });
   const tCommon = await getTranslations({ locale: rawLocale, namespace: "admin.common" });
+  const tOrders = await getTranslations({ locale: rawLocale, namespace: "admin.orders" });
 
   const data = await getDashboardData();
   const canSeeOrders = hasPermission(session.permissions, "orders.manage");
@@ -156,7 +157,7 @@ export default async function AdminDashboardPage({
               <Table>
                 <thead>
                   <tr>
-                    <Th>{t("recentOrders")}</Th>
+                    <Th>{tOrders("columnOrder")}</Th>
                     <Th>{tCommon("status")}</Th>
                     <Th>{tCommon("total")}</Th>
                     <Th>{tCommon("date")}</Th>
