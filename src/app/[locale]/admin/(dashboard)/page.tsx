@@ -18,6 +18,15 @@ import { formatDate, formatMoney, formatNumber, localised, type AdminLocale } fr
 import { requireAdminPage } from "@/lib/admin/session";
 import { hasPermission } from "@/lib/auth/permissions";
 
+/**
+ * The storefront's `[locale]/layout.tsx` supplies `generateStaticParams`, and
+ * this page takes no `searchParams`, so Next.js would otherwise add /en/admin
+ * and /fa/admin to the prerender list — a per-admin dashboard must never be
+ * statically generated or cached. Declaring it here (not only on the layout) is
+ * what actually keeps it out of the build-time static list.
+ */
+export const dynamic = "force-dynamic";
+
 export default async function AdminDashboardPage({
   params,
 }: {

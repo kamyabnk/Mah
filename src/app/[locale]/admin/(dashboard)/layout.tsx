@@ -6,6 +6,14 @@ import { requireAdminPage } from "@/lib/admin/session";
 import { visibleNavGroups } from "@/lib/admin/nav";
 
 /**
+ * Never prerender or cache anything under the admin shell. Reading the session
+ * already forces these routes dynamic in practice, but stating it here means a
+ * future page that happens not to touch cookies cannot silently become static
+ * and serve one admin's view to another.
+ */
+export const dynamic = "force-dynamic";
+
+/**
  * Every admin route except `/admin/login` renders inside this shell. The
  * session check here is defence in depth: `src/middleware.ts` already redirects
  * anonymous visitors, but a security boundary is never left to the middleware
