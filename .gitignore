@@ -9,3 +9,5 @@ out
 *.tsbuildinfo
 /public/uploads/*
 !/public/uploads/.gitkeep
+
+/uploads/

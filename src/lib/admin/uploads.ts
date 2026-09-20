@@ -14,9 +14,13 @@ const ALLOWED_IMAGE_TYPES: Record<string, string> = {
 };
 
 /** The storage abstraction the rest of the app already uses for media. */
+const UPLOAD_DIR = path.resolve(
+  process.env.UPLOAD_DIR ?? path.join(process.cwd(), "public", "uploads")
+);
+
 export function adminStorage(): LocalStorageProvider {
   return new LocalStorageProvider(
-    path.join(process.cwd(), "public", "uploads"),
+    UPLOAD_DIR,
     UPLOAD_PUBLIC_PREFIX
   );
 }
